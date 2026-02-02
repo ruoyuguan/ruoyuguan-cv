@@ -1,0 +1,545 @@
+%-------------------------
+% Resume in Latex
+% Author : Aras Gungore
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\input{glyphtounicode}
+
+
+
+% --- code font ---
+\usepackage{courier}
+\newcommand{\code}[1]{{\fontfamily{pcr}\selectfont #1}}
+% ---------- Publications helpers (CV) ----------
+\newcommand{\pubdoi}[1]{\href{https://doi.org/#1}{doi:\allowbreak #1}}
+\newcommand{\pubtitle}[1]{``#1.''}
+\newcommand{\pubjournal}[3]{\textit{#1}, \textbf{#2}, #3}
+% ---------------------------------------------
+%
+% --- Conferences/Workshops: title-only first line, details on following lines ---
+\newcommand{\cvEvent}[4]{%
+  \item \textbf{#1}\\[-2pt]
+  \textit{\small #2} \hfill \textit{\small #3}\\[-2pt]
+  \textit{\small #4}\vspace{2pt}
+}
+%
+% ---------- Software/Data helpers (CV) ----------
+\newcommand{\softlink}[2]{\href{#1}{#2}}
+\newcommand{\softrepo}[3]{\textit{#1}. \softlink{#2}{#2} #3}
+% Usage: \softrepo{<Project>}{<URL>}{<optional: ; \pubdoi{...} ; vX.Y ; etc.>}
+% ----------------------------------------------
+\usepackage{academicons}
+%
+
+
+
+%---------- FONT OPTIONS ----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeEducationHeading}[6]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+      \textit{\small#5} & \textit{\small #6} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeOrganizationHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #2} \\
+      \textit{\small#3}
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%---------- HEADING ----------
+
+\begin{center}
+    \textbf{\Huge \scshape Ruo-Yu Guan} \\[-2pt] \vspace{3pt}
+    \small \textit{Research interests: gravitational-wave astrophysics; Galactic double white dwarfs; Milky Way structure; population inference} \\[4pt]
+    \small
+    \faMobile \hspace{.5pt} \href{tel:8618604511940}{+86 186 0451 1940}
+    $|$
+    \faAt \hspace{.5pt} \href{mailto:ruoyuguan.physics@gmail.com}{ruoyuguan.physics@gmail.com}
+    $|$
+    \faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/ruoyu-guan-physics/}{LinkedIn}
+    $|$
+    \faGithub \hspace{.5pt} \href{https://github.com/ruoyuguan}{GitHub}
+    $|$
+    \faGlobe \hspace{.5pt} \href{https://ruoyuguan.github.io/}{Portfolio}
+    $|$
+    \faMapMarker \hspace{.5pt} \href{https://www.google.com/maps/place/Huazhong+University+of+Science+and+Technology/@30.5138311,114.4097043,15z/data=!4m6!3m5!1s0x342ea4a4f8a230e9:0xf42f097ec953d0b1!8m2!3d30.5130043!4d114.4202756!16zL20vMDQ4bjRt?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoASAFQAw%3D%3D}{Wuhan, China}
+\\ \vspace{3pt}
+\faExternalLink \hspace{.5pt} \href{https://orcid.org/0009-0000-8680-1762}{ORCID}
+$|$
+\faGraduationCap \hspace{.5pt} \href{https://scholar.google.com/citations?user=krWheg0AAAAJ&hl=en}{Google Scholar}
+$|$
+\faSearch \hspace{.5pt} \href{https://ui.adsabs.harvard.edu/search/q=orcid%3A0009-0000-8680-1762}{ADS}
+\end{center}
+
+
+%----------- EDUCATION -----------
+
+\section{Education}
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+    
+    \resumeEducationHeading
+      {Huazhong University of Science and Technology (HUST)}{Wuhan, China}{School of Physics; National Gravitation Laboratory}{Sep.\ 2025 \textbf{--} Jun.\ 2029 \footnotesize{\textit{(expected)}}}
+      {Ph.D. in Physics (Theoretical Physics) \textit{(in progress)}}{Supervisor: Prof.\ Yan Wang}%\href{https://faculty.hust.edu.cn/wangyan11/en/index.htm}{\color{blue}Prof.\ Yan Wang}
+    \resumeItemListStart
+      \resumeItem{Research focus: gravitational-wave astrophysics (galactic double white dwarfs).}
+    \resumeItemListEnd
+
+    \resumeEducationHeading
+      {The University of Hong Kong (HKU)}{Hong Kong SAR, China}{Department of Physics, Faculty of Science}{Sep.\ 2023 \textbf{--} Jul.\ 2024; degree conferred Nov.\ 2024}
+      {M.Sc. in Physics}{Supervisor: Assoc.\ Prof.\ Stephen Chi-Yung Ng}%\href{https://astro.physics.hku.hk/~ncy/}{\color{blue}Assoc. Prof.\ Stephen Chi-Yung Ng}
+    \resumeItemListStart
+      \resumeItem{Capstone project: \textit{Identifying Sources in Cygnus OB2 Using Multiwavelength Observations}.}
+    \resumeItemListEnd
+
+    \resumeEducationHeading
+      {Jilin University (JLU)}{Changchun, China}{Department of Materials Science, School of Materials Science and Engineering}{Sep.\ 2018 \textbf{--} Jun.\ 2022}
+      {B.Sc. in Materials Physics}{}
+    \resumeItemListStart
+      \resumeItem{Graduation thesis: \textit{Study on the Prompt Emission of Gamma-ray Bursts and its Polarization}.}
+      \resumeItem{Research mentor: Prof.\ Mi-Xiang Lan (Center for Theoretical Physics \& College of Physics, Jilin University).}%\href{https://theory.jlu.edu.cn/info/1042/1053.htm}{\color{blue}Prof.\ Mi-Xiang Lan}
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%---------------------------------%
+
+
+%----------- RESEARCH POSITIONS -----------
+
+\section{Research Positions}
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Huazhong University of Science and Technology}{Wuhan, China}
+      {Research Assistant (contract), Department of Astronomy}{Nov.\ 2024 \textbf{--} Jun.\ 2025}
+    \resumeItemListStart
+      \resumeItem{Supervisor: Prof.\ Yuan-Chuan Zou.}
+      \resumeItem{Gamma-ray burst (GRB) research (see Research Experience / Publications).}
+      % \resumeItem{(Optional) Supported by National SKA Program of China (Grant No.\ 2022SKA0130100).}
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+
+
+
+
+%----------- PUBLICATIONS -----------
+
+\section{Publications}
+  \vspace{2pt}
+
+  \textbf{Refereed journal articles}
+  \vspace{-2pt}
+  \begin{enumerate}[leftmargin=0.15in, label={[\arabic*]}, itemsep=0pt, topsep=3pt]%label={[J\arabic*]}
+    \item \textbf{Ruo-Yu Guan} and Mi-Xiang Lan.
+      \pubtitle{Interpreting time-integrated polarization data of gamma-ray burst prompt emission}
+      \pubjournal{Astronomy \& Astrophysics}{670}{A160 (2023)}.
+      \pubdoi{10.1051/0004-6361/202243805}.
+
+    \item \textbf{Ruo-Yu Guan}, Fei-Fei Wang, and Yuan-Chuan Zou.
+      \pubtitle{Hurst index of gamma-ray burst light curves and its statistical study}
+      \pubjournal{Journal of High Energy Astrophysics}{51}{100559 (2026)}.
+      \pubdoi{10.1016/j.jheap.2026.100559}.
+  \end{enumerate}
+
+  % \vspace{4pt}
+  % \textbf{Software / data releases}
+  % \vspace{-2pt}
+  % \begin{enumerate}[leftmargin=0.15in, label={[\arabic*]}, itemsep=0pt, topsep=3pt]
+  %   % (Optional; add to preamble once)
+  %   % ---------- Software/Data helpers (CV) ----------
+  %   % \newcommand{\publink}[2]{\href{#1}{#2}}
+  %   % \newcommand{\pubrepo}[2]{\textit{#1}. \publink{#2}{#2}}
+  %   % ----------------------------------------------
+  %   \item \textbf{Ruo-Yu Guan}. \textit{<Project Name>}. \href{<URL>}{<URL>}. % optional: \pubdoi{10.5281/zenodo.XXXXXXX}.
+  % \end{enumerate}
+
+  % \vspace{4pt}
+  % \textbf{Preprints}
+  % \vspace{-2pt}
+  % \begin{enumerate}[leftmargin=0.15in, label={[\arabic*]}, itemsep=0pt, topsep=3pt]
+  %   \item ...
+  % \end{enumerate}
+
+  % \vspace{4pt}
+  % \textbf{Submitted manuscripts}
+  % \vspace{-2pt}
+  % \begin{enumerate}[leftmargin=0.15in, label={[\arabic*]}, itemsep=0pt, topsep=3pt]
+  %   \item ...
+  % \end{enumerate}
+
+  % \vspace{4pt}
+  % \textbf{Manuscripts in preparation}
+  % \vspace{-2pt}
+  % \begin{enumerate}[leftmargin=0.15in, label={[\arabic*]}, itemsep=0pt, topsep=3pt]
+  %   \item ...
+  % \end{enumerate}
+
+  % \vspace{4pt}
+  % \textbf{Conference proceedings / non-refereed}
+  % \vspace{-2pt}
+  % \begin{enumerate}[leftmargin=0.15in, label={[\arabic*]}, itemsep=0pt, topsep=3pt]
+  %   \item ...
+  % \end{enumerate}
+
+  %----------------------------------%
+
+%----------- RESEARCH EXPERIENCE -----------
+
+\section{Research Experience}
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+
+    \item
+      \textbf{Milky Way Structure Inference from Multi-Messenger Observations of Double White Dwarf (DWD) Binaries}\\[-2pt]
+      \textit{National Gravitation Laboratory and School of Physics, HUST} \hfill \textit{Wuhan, China}\\[-2pt]
+      \textit{Ph.D.\ research (Supervisor: Prof.\ Yan Wang)} \hfill \textit{Jul.\ 2025 \textbf{--} Present}
+      \resumeItemListStart
+        \resumeItem{Research focus: gravitational-wave (GW) astrophysics and Milky Way structure inference using Galactic double white dwarf (DWD) binaries as multi-messenger targets.}
+        \resumeItem{Building a simulation-based inference pipeline integrating population synthesis (\code{COSMIC}) with hierarchical Bayesian inference (e.g., \code{GWpopulation}).}
+        \resumeItem{Quantifying selection effects, detector response, and observational uncertainties for space-based GW observations (Laser Interferometer Space Antenna (LISA) / TianQin context).}
+        \resumeItem{\textbf{Milestone:} Ph.D.\ proposal approved; proposal title: \textit{Milky Way Structure Inference from Multi-Messenger Observations of Double White Dwarf Binaries}.}
+        % \resumeItem{(Optional) Update the proposal title once an official filed English title is available.}
+      \resumeItemListEnd
+      \vspace{2pt}
+
+    \item
+      \textbf{Time-Series and Correlation Analysis of Gamma-Ray Burst (GRB) Light Curves}\\[-2pt]
+      \textit{Department of Astronomy, HUST} \hfill \textit{Wuhan, China}\\[-2pt]
+      \textit{Pre-Ph.D.\ research (Research Assistant, contract; Supervisor: Prof.\ Yuan-Chuan Zou)} \hfill \textit{Oct.\ 2024 \textbf{--} Jan.\ 2026}
+      \resumeItemListStart
+        \resumeItem{Conducted GRB light-curve time-series analysis using detrended fluctuation analysis (DFA) and Hurst exponent estimation; performed statistical correlation studies in \code{Python}.}
+        \resumeItem{Maintained \code{Python}-based workflows for preprocessing, feature extraction, statistical analysis, and visualization; supported manuscript preparation.}
+        \resumeItem{Resulted in a first-author refereed journal article (see Publications).}
+        \resumeItem{Supported by the National SKA Program of China (Grant No.\ 2022SKA0130100).}
+      \resumeItemListEnd
+      \vspace{2pt}
+
+    \item
+      \textbf{Identifying Sources in Cygnus OB2 Using Multiwavelength Observations}\\[-2pt]
+      \textit{Department of Physics, Faculty of Science, HKU} \hfill \textit{Hong Kong SAR, China}\\[-2pt]
+      \textit{M.Sc.\ capstone project (Supervisor: Assoc.\ Prof.\ Stephen Chi-Yung Ng)} \hfill \textit{Sep.\ 2023 \textbf{--} Jun.\ 2024}
+      \resumeItemListStart
+        \resumeItem{Reduced and analyzed \textit{Chandra} X-ray observations using standard pipelines with the Chandra Interactive Analysis of Observations (CIAO) software, including source detection and quality control.}
+        \resumeItem{Merged 18 X-ray observations in the Cygnus OB2 region and assembled a catalog of detected X-ray sources.}
+        \resumeItem{Cross-matched X-ray sources with \textit{Gaia} counterparts to classify association members versus foreground/background objects.}
+      \resumeItemListEnd
+      \vspace{2pt}
+
+    \item
+      \textbf{Gamma-Ray Burst Prompt Emission and Polarization}\\[-2pt]
+      \textit{Center for Theoretical Physics and College of Physics, JLU} \hfill \textit{Changchun, China}\\[-2pt]
+      \textit{Undergraduate research (Mentor: Prof.\ Mi-Xiang Lan)} \hfill \textit{2022 \textbf{--} Feb.\ 2023}
+      \resumeItemListStart
+        \resumeItem{Collected and organized GRB prompt-emission spectral parameters and polarization measurements from the literature by instrument and energy band.}
+        \resumeItem{Computed time-integrated polarization degrees for $\sim$37 GRBs under a synchrotron-emission framework using \code{IDL}; filtered unphysical solutions and compared model predictions with observations.}
+        \resumeItem{Resulted in a first-author refereed journal article (see Publications).}
+        \resumeItem{Supported by the National Natural Science Foundation of China (Grants No.\ 11903014 and 12147217).}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+%------------------------------------------%
+
+%----------- SKILLS -----------
+
+\section{Skills}
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+    \small{\item{
+
+        \textbf{Languages:}{ Chinese (Mandarin: native; Cantonese: conversational); English (IELTS 6.5, 2023; completed an English-taught M.Sc. at HKU).} \\ \vspace{3pt}%English (professional proficiency; completed an English-taught M.Sc. at HKU)
+
+        \textbf{Programming:}{ \textbf{\code{Python}} (primary); \code{MATLAB}, \code{Mathematica}, \code{R} (familiar); \code{IDL}, \code{C++} (prior experience).} \\ \vspace{3pt}
+
+        \textbf{Methods:}{ time-series analysis; statistical correlation analysis; hierarchical Bayesian inference (\code{GWpopulation}; Markov chain Monte Carlo (MCMC)); Monte Carlo simulation and mock-catalog generation.} \\ \vspace{3pt}
+
+        \textbf{Scientific computing:}{ \code{NumPy}, \code{SciPy}, \code{Pandas}, \code{Matplotlib}; \code{Jupyter}; Flexible Image Transport System (FITS) data handling; pipeline automation (bash/Python scripts).} \\ \vspace{3pt}
+
+        \textbf{Astrophysics \& gravitational-wave (GW):}{ population synthesis (\code{COSMIC}); gravitational-wave population inference; catalog-based population studies.} \\ \vspace{3pt}
+
+        \textbf{Scholarly writing:}{ \LaTeX; \code{Bib\TeX}.} \\ \vspace{3pt}
+
+        \textbf{Computing environment:}{ \code{Git}/\code{GitHub}; \code{bash} (shell scripting); Windows, macOS, Linux (Ubuntu); high-performance computing (HPC) (remote Linux servers; batch jobs); Secure Shell (SSH)-based workflows.} \\
+
+    }}
+  \resumeSubHeadingListEnd
+%-------------------------------------------
+
+%----------- SOFTWARE & DATA RELEASES -----------
+
+% \section{Software \& Data Releases}
+%   \vspace{2pt}
+%   \textbf{Open-source software}
+%   \vspace{-2pt}
+%   \begin{enumerate}[leftmargin=0.15in, label={[\arabic*]}, itemsep=0pt, topsep=3pt]
+%     % \item \textbf{Ruo-Yu Guan}. 
+%     %   \softrepo{<Repository / package name>}{<URL>}{; v<version> (release date); \pubdoi{10.5281/zenodo.XXXXXXX}.}
+%     %   \\
+%     %   \textit{\small Brief descriptor: purpose, methods, datasets, or reproducibility notes.}
+%   \end{enumerate}
+%
+%   \vspace{4pt}
+%   \textbf{Datasets / catalogs}
+%   \vspace{-2pt}
+%   \begin{enumerate}[leftmargin=0.15in, label={[\arabic*]}, itemsep=0pt, topsep=3pt]
+%     % \item \textbf{Ruo-Yu Guan}. 
+%     %   \softrepo{<Dataset / catalog title>}{<URL or DOI landing page>}{; \pubdoi{10.5281/zenodo.XXXXXXX}.}
+%     %   \\
+%     %   \textit{\small Brief descriptor: scope, format (e.g., FITS/CSV), access conditions.}
+%   \end{enumerate}
+%
+%-----------------------------------------------%
+
+
+%----------- TALKS & PRESENTATIONS -----------
+
+\section{Talks \& Presentations}
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+
+    \item \small{
+      \textbf{2024 PKU International PhD Student Forum on the Frontiers of Modern Astronomy}\\[-2pt]
+      \textit{Poster presentation: ``Time-integrated Polarizations of Gamma-ray Burst Prompt Phase''} \hfill \textit{Dec.\ 2024}\\[-2pt]
+      \textit{Kavli Institute for Astronomy and Astrophysics, Peking University}
+    }
+
+  \resumeSubHeadingListEnd
+%------------------------------------------
+
+
+%----------- CONFERENCES & WORKSHOPS -----------
+
+\section{Conferences \& Workshops}
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+
+    \cvEvent
+      {2025 Gravitational Wave Data Analysis Summer School}
+      {Participant}
+      {Aug.\ 2025}
+      {Lanzhou Center for Theoretical Physics}
+
+    \cvEvent
+      {The First Edinburgh School for Extragalactic Astronomy (ESEA-I)}
+      {Participant}
+      {Jun.\ 2025}
+      {Institute for Astronomy, The University of Edinburgh}
+
+    \cvEvent
+      {Gravitational Wave Open Data Workshop 2025}
+      {Participant}
+      {May 2025}
+      {Gravitational Wave Open Science Center (GWOSC)}
+
+    \cvEvent
+      {2024 PKU International PhD Student Forum on the Frontiers of Modern Astronomy}
+      {Poster presenter}
+      {Dec.\ 2024}
+      {Kavli Institute for Astronomy and Astrophysics, Peking University}
+
+    \cvEvent
+      {International Conference on Space Sustainability 2024}
+      {Volunteer (conference support)}
+      {Dec.\ 2024}
+      {Laboratory for Space Research, The University of Hong Kong (HKU); \'{E}cole Polytechnique F\'{e}d\'{e}rale de Lausanne (EPFL)}
+
+    \cvEvent
+      {Celestial Holography Summer School 2024}
+      {Participant}
+      {Jul.\ 2024}
+      {Perimeter Institute for Theoretical Physics}
+
+    \cvEvent
+      {International Symposium on Cosmology and Particle Astrophysics 2023 (CosPA 2023)}
+      {Participant}
+      {Nov.\ 2023}
+      {Department of Physics and Institute of Theoretical Physics, The Chinese University of Hong Kong (CUHK)}
+
+    \cvEvent
+      {Multimessenger Astronomy: Bridging Transients, Lensing, and Dark Matter (Cosmic Frontiers)}
+      {Participant}
+      {Nov.\ 2023}
+      {Department of Physics, CUHK}
+
+  \resumeSubHeadingListEnd
+
+%---------------------------------
+
+%----------- AWARDS & HONORS -----------
+
+%\section{Awards \& Honors}
+  %\vspace{2pt}
+  %\resumeSubHeadingListStart
+    %\small{\item{
+
+      % \textbf{<Award name>:}{ <Granting body/Institution>. <Brief qualifier: competitive/selected/nomination-based>. (<Mon.\ YYYY>) } \\ \vspace{3pt}
+
+      % Example formats:
+      % \textbf{Outstanding Graduate Scholarship:}{ Huazhong University of Science and Technology. Competitive; awarded to top-ranked graduate students. (Oct.\ 2025)} \\ \vspace{3pt}
+
+      % If it is universal / non-competitive, either omit, or label clearly:
+      % \textbf{Graduate Academic Scholarship:}{ Huazhong University of Science and Technology. Institutional scholarship (standard graduate support). (Sep.\ 2025 -- Present)} \\
+
+    %}}
+  %\resumeSubHeadingListEnd
+
+%--------------------------------------%
+
+%----------- PROFESSIONAL ACTIVITIES -----------
+
+\section{Professional Activities}
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+
+\resumeSubheading
+  {LISA (Laser Interferometer Space Antenna) Consortium}{}
+  {Member}{Jan.\ 2026 \textbf{--} Present}
+
+    \resumeSubheading
+      {Laboratory for Space Research, The University of Hong Kong}{Hong Kong SAR, China}
+      {Member}{Oct.\ 2023 \textbf{--} Nov.\ 2024}
+
+    \resumeSubheading
+      {Chinese Physical Society (CPS)}{}
+      {Student Member}{May 2021 \textbf{--} Apr.\ 2022} % e.g., 2019 -- 2022
+      
+  \resumeSubHeadingListEnd
+  %------------------------------------------
+
+
+%----------- OUTREACH ACTIVITIES -----------
+
+\section{Outreach Activities}
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {China Skywatcher Asteroid Search Campaign}{Jan.\ 2025 \textbf{--} Feb.\ 2025}
+      {Participant}{International Astronomical Search Collaboration (IASC)}
+    % \resumeItemListStart
+    %   \resumeItem{(Optional) Performed image-based screening and candidate reporting as part of the campaign workflow.}
+    % \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%----------- REFERENCES -----------%
+\section{References}
+  \vspace{2pt}
+  References available upon request.
+%----------------------------------------
+
+\end{document}
